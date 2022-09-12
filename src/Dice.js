@@ -1,6 +1,6 @@
 import React from "react"
 import './Dice.css'
-
+//Check dice properties
 function Dice(props) {
     const styles = {
         backgroundColor: props.isHeld ? '#be3144' : 'ghostwhite',

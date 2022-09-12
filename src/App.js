@@ -20,7 +20,7 @@ function App() {
     const sameValue = dice.every(die => die.value === firstValue)
     let highscore = JSON.parse(localStorage.getItem('bestscore'))
 
-
+    //check highscore present
     if (highscore) {
       setBestScore(highscore)
     }

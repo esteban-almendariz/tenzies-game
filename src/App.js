@@ -29,6 +29,7 @@ function App() {
       document.querySelector('.title').innerHTML = 'You Won!'
       if (bestScore === 0) {
         setBestScore(score)
+        console.log(score)
       }
       if (score < bestScore) {
         localStorage.setItem('bestscore', JSON.stringify(score))

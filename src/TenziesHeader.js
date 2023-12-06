@@ -1,6 +1,7 @@
 import './TenziesHeader.css'
 
 function TenziesHeader() {
+    console.log('test')
     return (
         <div className='header'>
             <h1 className="title">Tenzies</h1>

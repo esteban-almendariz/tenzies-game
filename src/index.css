@@ -1,8 +1,10 @@
 body {
   background: #27292c;
+  margin: 0 auto;
   margin-top: 2em;
 
   font-family: 'Roboto', sans-serif;
+  color: rgb(251, 251, 244);
 }
 
 main {
@@ -16,7 +18,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgb(251, 251, 244);
 }
 
 .dice-container {
@@ -28,4 +29,24 @@ main {
 
 .roll-dice:active {
   box-shadow: inset 5px 5px 10px -3px #e2e7ff;
+}
+
+@media (width < 650px) {
+  main {
+    height: 700px;
+  }
+  .dice-container {
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    gap: 1.5em;
+  }
+  .score-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  body {
+    margin: 10px;
+  }
+ 
 }

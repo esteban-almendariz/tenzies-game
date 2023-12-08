@@ -1,8 +1,11 @@
+import { useState } from 'react'
 import './TenziesHeader.css'
 
-function TenziesHeader({tenzies}) {
-    const nameOnChange = (e) => {
-        console.log(e.target.value)
+function TenziesHeader({tenzies, player}) {
+    
+    const handleNameChange = (e) => {
+        
+        player(e.target.value)
     }
 
     return (
@@ -12,8 +15,9 @@ function TenziesHeader({tenzies}) {
             <div>
                 <p>Enter name to start game.</p>
                 <input 
+                    type='text'
                     placeholder='Name'
-                    onChange={nameOnChange}
+                    onChange={handleNameChange}
                     />
             </div>
         </div>

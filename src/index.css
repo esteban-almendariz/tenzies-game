@@ -5,6 +5,7 @@ body {
 
   font-family: 'Roboto', sans-serif;
   color: rgb(251, 251, 244);
+  min-width: 375px;
 }
 
 main {
@@ -12,7 +13,7 @@ main {
   margin: 0 auto;
   background: #3a5060;
   max-width: 650px;
-  height: 500px;
+  height: auto;
   border-radius: 1em;
   display: flex;
   flex-direction: column;
@@ -21,9 +22,12 @@ main {
 }
 
 .dice-container {
+  /* display: grid;
+  grid-template: auto auto / repeat(5, 1fr); */
   display: grid;
-  grid-template: auto auto / repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2em;
+  padding: 20px;
 }
 
 
@@ -31,14 +35,14 @@ main {
   box-shadow: inset 5px 5px 10px -3px #e2e7ff;
 }
 
-@media (width < 650px) {
+@media (width < 635px) {
   main {
-    height: 700px;
+    height: auto
   }
   .dice-container {
-    display: grid;
-    grid-template: auto / repeat(4, 1fr);
-    gap: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .score-container {
     display: flex;

@@ -12,12 +12,20 @@ function App() {
   const [tenzies, setTenzies] = useState(false)
   const [score, setScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
-
-  const [topPlayers, setTopPlayers] = useState({
-      name: '',
+  const [player, setPlayer] = useState({
+      playerName: '',
       score: ''
   })
 
+  const [topPlayers, setTopPlayers] = useState()
+
+  console.log(player)
+  const playerInfo = (player) => {
+    setPlayer(prevState => ({
+      ...prevState,
+      playerName: player
+    }))
+  }
 
 
     useEffect(() => {
@@ -102,20 +110,21 @@ function App() {
   return (
     <div>
         <main>
-        <TenziesHeader 
-          tenzies={tenzies}
-        />
-        <div className="dice-container">
-          {diceElements}
-        </div>
-        <Score
-          score={score}
-          bestScore={bestScore}
-        />
-        <RollBtn
-          tenzies={tenzies}
-          rollDie={rollDie}
-        />  
+          <TenziesHeader 
+            tenzies={tenzies}
+            player={playerInfo}
+          />
+          <div className="dice-container">
+            {diceElements}
+          </div>
+          <Score
+            score={score}
+            bestScore={bestScore}
+          />
+          <RollBtn
+            tenzies={tenzies}
+            rollDie={rollDie}
+          />  
       </main>
       <TopScore />
     </div>

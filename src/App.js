@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import Dice from "./Dice"
 import Score from './Score'
 import TenziesHeader from './TenziesHeader'
-import RollBtn from './RollBtn'
 import TopScore from './TopScore'
 
 
@@ -12,14 +11,15 @@ function App() {
   const [tenzies, setTenzies] = useState(false)
   const [score, setScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
+  const [startGame, setStartGame] = useState(false)
   const [player, setPlayer] = useState({
       playerName: '',
       score: ''
   })
-
   const [topPlayers, setTopPlayers] = useState()
 
   console.log(player)
+  
   const playerInfo = (player) => {
     setPlayer(prevState => ({
       ...prevState,
@@ -120,11 +120,9 @@ function App() {
           <Score
             score={score}
             bestScore={bestScore}
-          />
-          <RollBtn
             tenzies={tenzies}
             rollDie={rollDie}
-          />  
+          />
       </main>
       <TopScore />
     </div>
